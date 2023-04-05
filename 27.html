@@ -1,0 +1,30 @@
+<!--
+첫번째 입력에서는 학생의 이름이 공백으로 구분되어 입력되고, 
+두번째에는 그 학생의 수학 점수가 공백으로 구분되어 주어집니다. 
+
+두 개를 합쳐 학생의 이름이 key이고 value가 수학 점수인 객체를 출력해주세요.
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    const obj = {};
+    var key = prompt("이름 입력");
+    var key_arr = key.split(" ");
+
+    var value = prompt("점수 입력");
+    var value_arr = value.split(" ");
+    for (let i = 0; i < key_arr.length; i++) {
+      var name = key_arr[i];
+      var score = value_arr[i];
+      obj[name] = score;
+    }
+    console.log(obj);
+  </script>
+</html>
