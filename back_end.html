@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width : 200px;
+            height : 250px;
+            background-size : contain;
+            margin-left : 20px;
+
+        }
+
+        .main_container{
+            width : 500px;
+            height : 250px;
+            display : flex;
+        }
+
+    </style>
+</head>
+<script>
+    function doAction1() {
+        //json 문자열
+        const jsonString1 = '{"date" :"04/06 목","title":"더현대 서울에 대한 서울 vs 지방의 생각차이는?", "atag":"https://some.co.kr/contents/detail/SmFymVKm?startPage=1&cornerType=LIFE_OBSERVATORY", "img": "https://some.co.kr/contents/detail/SmFymVKm?startPage=1&cornerType=LIFE_OBSERVATORY"}';
+
+        //문자열을 자바스크립트 객체로 변환하기
+        const jsData1 = JSON.parse(jsonString1);
+    
+        //변환한 객체를 html 태그에 바인딩한다
+        let box1_date = document.querySelector('.box1_date');
+        let box1_title = document.querySelector('.box1_title');
+        let img = document.querySelector('.contanier').style.backgroundImage = "url('https://static.some.co.kr/sometrend/attachments/content/dbd94917-c6a8-4dd4-a699-f1545465d441/750_924%20(375_462)%20(1).jpg')";
+        
+        
+        box1_date.innerText = jsData1.date;
+        box1_title.innerText = jsData1.title;
+        box1_date.style.fontSize = "12px" 
+        box1_title.style.fontSize = "13px"
+        box1_date.style.fontWeight = "bold";
+        box1_title.style.fontWeight = "bold"
+        
+
+    }
+    function doAction2() {
+        //json 문자열
+        const jsonString2 = '{"date": "04/05 수","title": "BTS지민, 빌보드 찢었다 핫100 1위...K팝 솔로 최초"}';
+        
+        //문자열을 자바스크립트 객체로 변환하기
+        const jsData2 = JSON.parse(jsonString2);
+    
+        //변환한 객체를 html 태그에 바인딩한다
+        let box2_date = document.querySelector('.box2_date');
+        let box2_title = document.querySelector('.box2_title');
+        document.querySelector('.contanier2').style.backgroundImage = "url('https://static.some.co.kr/sometrend/attachments/content/5509521e-7f82-45e5-a5c7-7d9150d1298c/750_924%20(375_462)%20(1).jpg')";
+
+        box2_date.innerText = jsData2.date;
+        box2_title.innerText = jsData2.title;
+        box2_date.style.fontSize = "12px" 
+        box2_title.style.fontSize = "13px"
+        box2_date.style.color = "white";
+        box2_title.style.color = "white";
+        box2_date.style.fontWeight = "bold";
+        box2_title.style.fontWeight = "bold"
+    }
+</script>
+</head>
+<body>
+
+<button onclick="doAction1()">box1데이터를 바인딩하기</button>
+<button onclick="doAction2()">box2데이터를 바인딩하기</button>
+</br></br>
+<div class = "main_container">
+<div class = "contanier">
+    <p><span class="box1_date">0</span></p>
+    <p><span class="box1_title">0</span></p>
+</div>
+<div class = "contanier2">
+    <p><span class="box2_date">0</span></p>
+    <p><span class="box2_title">0</span></p>
+</div>
+
+</body>
+
+</html>

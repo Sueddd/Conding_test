@@ -26,3 +26,4 @@ main(5, (index) => {
   const d = index * index;
   const e = d;
 });
+
